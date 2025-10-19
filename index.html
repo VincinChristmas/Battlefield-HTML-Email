@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="x-apple-disable-message-reformatting">
+  <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no">
+  <meta name="color-scheme" content="light dark">
+  <meta name="supported-color-schemes" content="light dark">
+  <title>Basic Email Template</title>
+
+  <!--[if gte mso 9]>
+  <xml>
+    <o:OfficeDocumentSettings>
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+    </o:OfficeDocumentSettings>
+  </xml>
+  <![endif]-->
+
+  <!-- Force safe font in Outlook -->
+  <!--[if mso]>
+  <style>
+    * { font-family: Arial, sans-serif !important; }
+  </style>
+  <![endif]-->
+
+  <style>
+    :root{color-scheme:light dark;supported-color-schemes:light dark;}
+
+    html,body{margin:0 auto!important;padding:0!important;height:100%!important;width:100%!important;}
+    *{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+    div[style*="margin: 16px 0"]{margin:0!important;}
+    #MessageViewBody,#MessageWebViewDiv{width:100%!important;}
+
+    table,td{mso-table-lspace:0pt!important;mso-table-rspace:0pt!important;}
+    table{border-spacing:0!important;border-collapse:collapse!important;table-layout:fixed!important;margin:0 auto!important;}
+    img{-ms-interpolation-mode:bicubic;}
+    a{text-decoration:none;}
+    a[x-apple-data-detectors],.unstyle-auto-detected-links a,.aBn{
+      border-bottom:0!important;cursor:default!important;color:inherit!important;text-decoration:none!important;
+      font-size:inherit!important;font-family:inherit!important;font-weight:inherit!important;line-height:inherit!important;
+    }
+    .im{color:inherit!important;}
+    .a6S{display:none!important;opacity:0.01!important;}
+    img.g-img+div{display:none!important;}
+
+    /* Gmail iOS right-gutter fixes */
+    @media only screen and (min-device-width:320px) and (max-device-width:374px){u~div .email-container{min-width:320px!important;}}
+    @media only screen and (min-device-width:375px) and (max-device-width:413px){u~div .email-container{min-width:375px!important;}}
+    @media only screen and (min-device-width:414px){u~div .email-container{min-width:414px!important;}}
+
+    /* Hover */
+    .button-td,.button-a{transition:all 100ms ease-in;}
+    .button-td-primary:hover,.button-a-primary:hover{background:#555555!important;border-color:#555555!important;}
+
+
+
+
+    /* Dark mode */
+    @media (prefers-color-scheme: dark){
+      body{background:#1a1a1a!important;}
+      .email-bg{background:#1a1a1a!important;}
+      .darkmode-bg{background:#2a2a2a!important;}
+      h1,h2,h3,p,li,.darkmode-text,.email-container a:not([class]){color:#f5f5f5!important;}
+      .footer{color:#cccccc!important;}
+      .footer a{color:#60a5fa!important;}
+      .header-light-bg{background:#333333!important;}
+      td.button-td-primary,td.button-td-primary a{
+        background:#ffffff!important;border-color:#ffffff!important;color:#222222!important;
+      }
+      td.button-td-primary:hover,td.button-td-primary a:hover{
+        background:#cccccc!important;border-color:#cccccc!important;
+      }
+    }
+    </style>
+</head>
+<body width="100%" style="padding: 0 !important; background-color: #f4f4f4;" class="email-bg">
+    <center role="article" aria-roledescription="email" lang="en" style="width:100%;background-color: #000000" class="email-bg">
+        <!-- Hidden Preheader -->
+        <div style="max-height:0;overflow:hidden;mso-hide:all;" aria-hidden="true">
+            Thanks for subscribing — here’s what’s new, plus tips and resources inside.
+        </div>
+        <!-- Preview Text Spacing Hack -->
+        <div style="display:none;font-size:1px;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;mso-hide:all;font-family:sans-serif;">
+            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+            <!-- Container -->
+        <div style="max-width:600px;margin:0 auto;" class="email-container">
+            <!--[if mso]>
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
+                <tr>
+                    <td>
+            <![endif]-->
+  
+            <!-- Header -->
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color:#000000;" class="header-light-bg">
+            <tr>
+            <td style="text-align:center;">
+              <a href="#" style="text-decoration: underline;color:#c1cbd3;">
+              <p style="margin:40px 0px;font-family:Arial,sans-serif;font-size:14px;line-height:20px;color:#c1cbd3;" class="darkmode-text">This is Battlefield 6 on Another Level</p>
+              </a>
+              <h1 style="font-family:Arial,sans-serif;font-size:62px;color:#ffffff">BATTLEFIELD</h1>
+                <img src="img/image1.jpg" width="600" height="" alt="Company Logo"
+                style="width:70%;max-width:600px;height:auto;display:block;background:#dddddd;font-family:sans-serif;font-size:15px;line-height:15px;color:#555555;margin:auto auto 30px auto;" />
+            </td>
+            </tr>
+        </table>
+
+        <!-- Hero -->
+      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+        <tr>
+          <td style="background-color:#000000;" class="darkmode-bg">
+            
+            <img src="img/image2.jpg" width="600" height="" alt="Hero Image"
+                 class="g-img"
+                 style="width:70%;max-width:600px;height:auto;display:block;background:#dddddd;font-family:sans-serif;font-size:15px;line-height:15px;color:#555555;margin:auto auto 30px auto;">
+          </td>
+        </tr>
+      </table>
+
+      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+        <tr>
+          <td style="background-color:#000000;" class="darkmode-bg">
+            
+            <img src="img/image3.jpg" width="600" height="" alt="Hero Image"
+                 class="g-img"
+                 style="width:70%;max-width:600px;height:auto;display:block;background:#dddddd;font-family:sans-serif;font-size:15px;line-height:15px;color:#555555;margin:auto auto 30px auto;">
+          </td>
+        </tr>
+      </table>
+
+      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+        <tr>
+          <td style="background-color:#000000;" class="darkmode-bg">
+            
+            <img src="img/image4.jpg" width="600" height="" alt="Hero Image"
+                 class="g-img"
+                 style="width:70%;max-width:600px;height:auto;display:block;background:#dddddd;font-family:sans-serif;font-size:15px;line-height:15px;color:#555555;margin:auto auto 10px auto;">
+          </td>
+        </tr>
+      </table>
+
+      <!-- Footer -->
+    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color:#333333;" class="footer">
+      <tr>
+        <td style="padding:20px 0 40px 100px;">
+          <p style="margin:0 0 10px 0;font-family:Arial,sans-serif;font-size:12px;line-height:18px;color:#cccccc;">
+            JOIN THE CONVERSTION
+          </p>
+
+          <img src="img/icon-fb.png" width="24" height="24" alt="Facebook" style="display:inline-block;margin-right:10px;">
+
+          <img src="img/icon-x.png" width="24" height="24" alt="Twitter/X" style="display:inline-block;margin-right:10px;">
+
+          <img src="img/icon-insta.png" width="24" height="24" alt="Instagram" style="display:inline-block;margin-right:10px;">
+
+          <img src="img/icon-yt.png" width="24" height="24" alt="Youtube" style="display:inline-block;margin-right:10px;">
+
+          <img src="img/icon-twitch.png" width="24" height="24" alt="Twitch" style="display:inline-block;margin-right:10px;">
+
+          <div style="border: 1px solid #fffdfd; width: 400px; margin: 30px 0 20px 0;"></div>
+
+          <img src="img/game-rating.png" width="80" height="110" alt="Game Rating" style="display: inline-block;margin-bottom:10px;">
+
+          <p style="margin:0 0 10px 0;font-family:Arial,sans-serif;font-size:12px;line-height:18px;color:#cccccc; display:inline-block; vertical-align: top;">
+            Blood and Gore, Intense Violence, Strong Language <br> In-Game Purchase, Users Interact
+          </p>
+          <p style="margin:0;font-family:Arial,sans-serif;font-size:12px;line-height:18px; color:#cccccc;">
+            © 2025 Electronic Arts Inc. 
+          </p>
+          <a href="#" style="text-decoration: underline;color:#c1cbd3;">
+          <p style="margin-top: 30px;font-family:Arial,sans-serif;font-size:12px;line-height:18px; color:#cccccc;">UPDATE YOUR PREFERENCES</p>
+        </a>
+        <p style="margin:0; width: 400px; font-family:Arial,sans-serif;font-size:9px;line-height:18px; color:#cccccc;">If you no longer want us to contact you <span><a href="#" style="text-decoration: underline;color:#c1cbd3;">click here</a></span> to be removed from our mailing list or change your preferences. You can also wrote to: Privacy Policy Adminstrator, Electronic Arts Inc., 209 Redwood Shores Parkway, Redwood City, CA 94065</p>
+
+        <p style="margin-top: 25px;font-family:Arial,sans-serif;font-size:12px;line-height:18px;">
+          <a href="#" style="color:#cccccc;text-decoration:underline;">Unsubscribe</a> |
+          <a href="#" style="color:#cccccc;text-decoration:underline;">Privacy Policy</a> |
+          <a href="#" style="color:#cccccc;text-decoration:underline;">Contact Us</a>
+        </p>
+        </td>
+      </tr>
+    </table>
+
+    <!--[if mso]>
+        </td>
+        </tr>
+        </table>
+    <![endif]-->
+
+    
+    </center>
+    
+</body>
+</html>
