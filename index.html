@@ -8,7 +8,7 @@
   <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no">
   <meta name="color-scheme" content="light dark">
   <meta name="supported-color-schemes" content="light dark">
-  <title>Basic Email Template</title>
+  <title>Battlefield Email</title>
 
   <!--[if gte mso 9]>
   <xml>
@@ -18,46 +18,34 @@
   </xml>
   <![endif]-->
 
-  <!-- Force safe font in Outlook -->
+  <!-- Outlook font fix (still needed as a conditional) -->
   <!--[if mso]>
   <style>
     * { font-family: Arial, sans-serif !important; }
   </style>
   <![endif]-->
 
+  <!-- Critical client fixes that MUST stay in <style> (no inline equivalent) -->
   <style>
-    :root{color-scheme:light dark;supported-color-schemes:light dark;}
-
-    html,body{margin:0 auto!important;padding:0!important;height:100%!important;width:100%!important;}
+    /* These target client-specific quirks with no inline alternative */
     *{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
     div[style*="margin: 16px 0"]{margin:0!important;}
     #MessageViewBody,#MessageWebViewDiv{width:100%!important;}
-
     table,td{mso-table-lspace:0pt!important;mso-table-rspace:0pt!important;}
-    table{border-spacing:0!important;border-collapse:collapse!important;table-layout:fixed!important;margin:0 auto!important;}
     img{-ms-interpolation-mode:bicubic;}
-    a{text-decoration:none;}
     a[x-apple-data-detectors],.unstyle-auto-detected-links a,.aBn{
       border-bottom:0!important;cursor:default!important;color:inherit!important;text-decoration:none!important;
       font-size:inherit!important;font-family:inherit!important;font-weight:inherit!important;line-height:inherit!important;
     }
-    .im{color:inherit!important;}
     .a6S{display:none!important;opacity:0.01!important;}
     img.g-img+div{display:none!important;}
 
-    /* Gmail iOS right-gutter fixes */
+    /* Gmail iOS gutter fixes (media queries can't be inlined) */
     @media only screen and (min-device-width:320px) and (max-device-width:374px){u~div .email-container{min-width:320px!important;}}
     @media only screen and (min-device-width:375px) and (max-device-width:413px){u~div .email-container{min-width:375px!important;}}
     @media only screen and (min-device-width:414px){u~div .email-container{min-width:414px!important;}}
 
-    /* Hover */
-    .button-td,.button-a{transition:all 100ms ease-in;}
-    .button-td-primary:hover,.button-a-primary:hover{background:#555555!important;border-color:#555555!important;}
-
-
-
-
-    /* Dark mode */
+    /* Dark mode (media queries can't be inlined) */
     @media (prefers-color-scheme: dark){
       body{background:#1a1a1a!important;}
       .email-bg{background:#1a1a1a!important;}
@@ -73,124 +61,181 @@
         background:#cccccc!important;border-color:#cccccc!important;
       }
     }
-    </style>
+
+    /* Mobile responsiveness */
+    @media (max-width: 480px) {
+      /* Adjust footer padding */
+      .footer td {
+        padding: 20px 20px 40px 20px !important;
+      }
+      
+      /* Scale wide elements to fit mobile */
+      .footer div[style*="width: 400px"] {
+        width: 100% !important;
+      }
+      .footer p[style*="width: 400px"] {
+        width: 100% !important;
+      }
+      
+      /* Center align text and icons */
+      .footer div[style*="text-align:left"] {
+        text-align: center !important;
+      }
+      .footer p[style*="text-align:left"] {
+        text-align: center !important;
+      }
+      
+      /* Fix rating image layout */
+      .footer img[src*="game-rating.png"] {
+        float: none !important;
+        margin: 0 auto 15px auto !important;
+        display: block !important;
+      }
+    }
+  </style>
 </head>
-<body width="100%" style="padding: 0 !important; background-color: #f4f4f4;" class="email-bg">
-    <center role="article" aria-roledescription="email" lang="en" style="width:100%;background-color: #000000" class="email-bg">
-        <!-- Hidden Preheader -->
-        <div style="max-height:0;overflow:hidden;mso-hide:all;" aria-hidden="true">
-            Thanks for subscribing — here’s what’s new, plus tips and resources inside.
-        </div>
-        <!-- Preview Text Spacing Hack -->
-        <div style="display:none;font-size:1px;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;mso-hide:all;font-family:sans-serif;">
-            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
-        </div>
-            <!-- Container -->
-        <div style="max-width:600px;margin:0 auto;" class="email-container">
-            <!--[if mso]>
-            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
-                <tr>
-                    <td>
-            <![endif]-->
-  
-            <!-- Header -->
-        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color:#000000;" class="header-light-bg">
-            <tr>
-            <td style="text-align:center;">
-              <a href="#" style="text-decoration: underline;color:#c1cbd3;">
-              <p style="margin:40px 0px;font-family:Arial,sans-serif;font-size:14px;line-height:20px;color:#c1cbd3;" class="darkmode-text">This is Battlefield 6 on Another Level</p>
-              </a>
-              <h1 style="font-family:Arial,sans-serif;font-size:62px;color:#ffffff">BATTLEFIELD</h1>
-                <img src="img/image1.jpg" width="600" height="" alt="Company Logo"
-                style="width:70%;max-width:600px;height:auto;display:block;background:#dddddd;font-family:sans-serif;font-size:15px;line-height:15px;color:#555555;margin:auto auto 30px auto;" />
-            </td>
-            </tr>
-        </table>
+<body width="100%" style="padding:0 !important; margin:0 !important; background-color:#000000; height:100%!important; width:100%!important;" class="email-bg">
+  <center role="article" aria-roledescription="email" lang="en" style="width:100%; background-color:#000000;" class="email-bg">
+    <!-- Hidden Preheader -->
+    <div style="max-height:0; overflow:hidden; mso-hide:all;" aria-hidden="true">
+      Thanks for subscribing — here’s what’s new, plus tips and resources inside.
+    </div>
 
-        <!-- Hero -->
-      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+    <!-- Preview Text Spacing Hack -->
+    <div style="display:none; font-size:1px; line-height:1px; max-height:0px; max-width:0px; opacity:0; overflow:hidden; mso-hide:all; font-family:sans-serif;">
+      &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+    </div>
+
+    <!-- Container -->
+    <div style="max-width:600px; margin:0 auto;" class="email-container">
+      <!--[if mso]>
+      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center"><tr><td>
+      <![endif]-->
+
+      <!-- Header -->
+      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color:#000000; border-spacing:0; border-collapse:collapse; margin:0 auto;" class="header-light-bg">
         <tr>
-          <td style="background-color:#000000;" class="darkmode-bg">
-            
-            <img src="img/image2.jpg" width="600" height="" alt="Hero Image"
-                 class="g-img"
-                 style="width:70%;max-width:600px;height:auto;display:block;background:#dddddd;font-family:sans-serif;font-size:15px;line-height:15px;color:#555555;margin:auto auto 30px auto;">
+          <td style="text-align:center; padding:0;">
+            <a href="https://click.e.ea.com/?qs=2b08c6a91e07f599c243f15dd6e44da02958635dd15ac0266fc37dc7c5ba8d521c013f5aad555a689194397b6c4096835ccbe3de369eab9f0257e31114747e6b" style="text-decoration:underline; color:#c1cbd3;">
+              <p style="margin:40px 0px; font-family:Arial,sans-serif; font-size:14px; line-height:20px; color:#c1cbd3;" class="darkmode-text">This is Battlefield 6 on Another Level</p>
+            </a>
+            <a href="https://click.e.ea.com/?qs=2b08c6a91e07f599204eca1203539a0df0e20bdad1c3118aaba329d7a76b1815448fb3ddc732f07dfa6095d6f3e2b83705693162b22f3a5ca5a52f0a26623386">
+              <img src="https://github.com/VincinChristmas/Battlefield-HTML-Email/blob/main/img/logo.png?raw=true" width="300" height="auto" alt="Battlefield Logo" style="height:auto; display:block; margin:0 auto 20px auto;">
+            </a>
+
+            <a href="https://click.e.ea.com/?qs=2b08c6a91e07f5999b0c158164fa635fb3c10d9841ee72e5ee73eeba3c6448c90bd995c4218ff5ca4d4beab857cbdc41bb1249ae6201479d1ab6662effb8d6b5"> 
+              <img src="https://github.com/VincinChristmas/Battlefield-HTML-Email/blob/main/img/image1.jpg?raw=true" width="600" height="" alt="Battlefield 6 promotional artwork" 
+                 style="width:70%; max-width:600px; height:auto; display:block; background:#dddddd; font-family:sans-serif; font-size:15px; line-height:15px; color:#555555; margin:auto auto 30px auto;">
+            </a>
           </td>
         </tr>
       </table>
 
-      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+      <!-- Hero Images -->
+      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color:#000000; border-spacing:0; border-collapse:collapse; margin:0 auto;">
         <tr>
           <td style="background-color:#000000;" class="darkmode-bg">
-            
-            <img src="img/image3.jpg" width="600" height="" alt="Hero Image"
-                 class="g-img"
-                 style="width:70%;max-width:600px;height:auto;display:block;background:#dddddd;font-family:sans-serif;font-size:15px;line-height:15px;color:#555555;margin:auto auto 30px auto;">
+            <a href="https://click.e.ea.com/?qs=2b08c6a91e07f5995242506f73b2574845e1943a51a688747b1b3e40b97d6d43ea6de6b9fe4637298714ca32a0ca2414541609e702a06126917198a757b03399">
+              <img src="https://github.com/VincinChristmas/Battlefield-HTML-Email/blob/main/img/image2.jpg?raw=true" width="600" height="" alt="Battlefield gameplay screenshot" class="g-img"
+                 style="width:70%; max-width:600px; height:auto; display:block; background:#dddddd; font-family:sans-serif; font-size:15px; line-height:15px; color:#555555; margin:auto auto 30px auto;">
+            </a>
           </td>
         </tr>
       </table>
 
-      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color:#000000; border-spacing:0; border-collapse:collapse; margin:0 auto;">
         <tr>
           <td style="background-color:#000000;" class="darkmode-bg">
-            
-            <img src="img/image4.jpg" width="600" height="" alt="Hero Image"
-                 class="g-img"
-                 style="width:70%;max-width:600px;height:auto;display:block;background:#dddddd;font-family:sans-serif;font-size:15px;line-height:15px;color:#555555;margin:auto auto 10px auto;">
+            <a href="https://click.e.ea.com/?qs=2b08c6a91e07f599e00952d4c255905514041977df1ae10d0b32f31f1708333b21fd60cdc790c03b47409b2a6fa8eedf83edc3de818710c578140894e3df37cf">
+              <img src="https://github.com/VincinChristmas/Battlefield-HTML-Email/blob/main/img/image3.jpg?raw=true" width="600" height="" alt="Battlefield character art" class="g-img"
+                 style="width:70%; max-width:600px; height:auto; display:block; background:#dddddd; font-family:sans-serif; font-size:15px; line-height:15px; color:#555555; margin:auto auto 30px auto;">
+            </a>
+          </td>
+        </tr>
+      </table>
+
+      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color:#000000; border-spacing:0; border-collapse:collapse; margin:0 auto;">
+        <tr>
+          <td style="background-color:#000000;" class="darkmode-bg">
+            <a href="https://click.e.ea.com/?qs=2b08c6a91e07f599ed93e092b44e1fab0743fa02f9158758a548a4c2300b97b65840d2d200b37610a3856c592f53668eb964380c4a1cf70c5ff9eb11d0e8f228">
+              <img src="https://github.com/VincinChristmas/Battlefield-HTML-Email/blob/main/img/image4.jpg?raw=true" width="600" height="" alt="Battlefield map preview" class="g-img"
+                 style="width:70%; max-width:600px; height:auto; display:block; background:#dddddd; font-family:sans-serif; font-size:15px; line-height:15px; color:#555555; margin:auto auto 10px auto;">
+            </a>
           </td>
         </tr>
       </table>
 
       <!-- Footer -->
-    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color:#333333;" class="footer">
-      <tr>
-        <td style="padding:20px 0 40px 100px;">
-          <p style="margin:0 0 10px 0;font-family:Arial,sans-serif;font-size:12px;line-height:18px;color:#cccccc;">
-            JOIN THE CONVERSTION
-          </p>
+      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color:#333333; border-spacing:0; border-collapse:collapse; margin:0 auto;" class="footer">
+        <tr>
+          <!-- Container cell with desktop left padding (aligns with photos) -->
+          <td style="padding:20px 15px 40px; font-family:Arial,sans-serif; color:#cccccc;">
+            <!-- Inner wrapper to restrict text width (matches photo width) -->
+            <div style="max-width:420px; margin:0 0 0 95px;">
+              <!-- "JOIN THE CONVERSATION" -->
+              <p style="margin:0 0 15px 0; font-family:Arial,sans-serif; font-size:12px; line-height:18px; color:#cccccc; text-align:left;">
+                JOIN THE CONVERSATION
+              </p>
 
-          <img src="img/icon-fb.png" width="24" height="24" alt="Facebook" style="display:inline-block;margin-right:10px;">
+              <!-- Social Icons -->
+              <div style="margin:0 0 20px 0; text-align:left;">
+                <a href="https://click.e.ea.com/?qs=035195fff62b4f4756a1691dd0a32ee2de7a90f83496ec63b53e8a6e3a23a0a73e3e09c167d7e5e740a50af421d1b6940a2267ab276e7b86c5727cd6b1339569" style="text-decoration: none;">
+                  <img src="https://github.com/VincinChristmas/Battlefield-HTML-Email/blob/main/img/icon-fb.png?raw=true" width="24" height="24" alt="Facebook" style="display:inline-block; margin:0 10px 0 0; vertical-align:middle;">
+                </a>
+                <a href="https://click.e.ea.com/?qs=035195fff62b4f473a91a2d8a7f4349e807d9bb542be0a35afdf5f15b830df541450e55085fd4f09a9f080e21c969d565d949aff3edb5b31d9620d0bce2db74b" style="text-decoration: none;">
+                  <img src="https://github.com/VincinChristmas/Battlefield-HTML-Email/blob/main/img/icon-x.png?raw=true" width="24" height="24" alt="Twitter/X" style="display:inline-block; margin:0 10px 0 0; vertical-align:middle;">
+                </a>
+                <a href="https://click.e.ea.com/?qs=035195fff62b4f477edeb9861312e9def746d9661659267e7d0b40bb2da9a1edb8436d05be61fd73ac9a0d8a44ff305161fd692f3ab678d85f2b0c0f9411a922" style="text-decoration: none;">
+                  <img src="https://github.com/VincinChristmas/Battlefield-HTML-Email/blob/main/img/icon-insta.png?raw=true" width="24" height="24" alt="Instagram" style="display:inline-block; margin:0 10px 0 0; vertical-align:middle;">
+                </a>
+                <a href="https://click.e.ea.com/?qs=035195fff62b4f477228b98c7c9081bc963e049c1bea1c4281da99f6ef1e0f6fb188215102e71ef624a5a944e933b2bd6b33a89c5ebb58094b03c1afdf842d60" style="text-decoration: none;">
+                  <img src="https://github.com/VincinChristmas/Battlefield-HTML-Email/blob/main/img/icon-yt.png?raw=true" width="24" height="24" alt="Youtube" style="display:inline-block; margin:0 10px 0 0; vertical-align:middle;">
+                </a>
+                <a href="https://www.twitch.tv/battlefield" style="text-decoration: none;">
+                  <img src="https://github.com/VincinChristmas/Battlefield-HTML-Email/blob/main/img/icon-twitch.png?raw=true" width="24" height="24" alt="Twitch" style="display:inline-block; margin:0; vertical-align:middle;">
+                </a>
+              </div>
 
-          <img src="img/icon-x.png" width="24" height="24" alt="Twitter/X" style="display:inline-block;margin-right:10px;">
+              <!-- Divider (matches text width) -->
+              <div style="border:1px solid #fffdfd; width:90%; margin:0 0 20px 0;"></div>
 
-          <img src="img/icon-insta.png" width="24" height="24" alt="Instagram" style="display:inline-block;margin-right:10px;">
+              <!-- Game Rating & Description -->
+              <div style="margin:0 0 20px 0; overflow:hidden;">
+                <a href="https://click.e.ea.com/?qs=2b08c6a91e07f599ebf44edeb9802b7aac55df2ee730d8dee9c13d2977682b5c281ed5694beefcc9128662f60e9afc1751ff4ea9d7154f30fd90f39685caea68">
+                  <img src="https://github.com/VincinChristmas/Battlefield-HTML-Email/blob/main/img/game-rating.png?raw=true" width="80" height="110" alt="Game Rating" style="display:block; float:left; margin:0 15px 15px 0;">
+                </a>
+                <p style="margin:0 0 10px 0; font-family:Arial,sans-serif; font-size:12px; line-height:18px; color:#cccccc;">
+                  Blood and Gore, Intense Violence, Strong Language <br>In-Game Purchase, Users Interact
+                </p>
+              </div>
 
-          <img src="img/icon-yt.png" width="24" height="24" alt="Youtube" style="display:inline-block;margin-right:10px;">
+              <!-- Copyright -->
+              <p style="margin:0 0 30px 0; font-family:Arial,sans-serif; font-size:12px; line-height:18px; color:#cccccc; clear:left;">
+                © 2025 Electronic Arts Inc.
+              </p>
 
-          <img src="img/icon-twitch.png" width="24" height="24" alt="Twitch" style="display:inline-block;margin-right:10px;">
+              <!-- Update Preferences Link -->
+              <a href="https://click.e.ea.com/?qs=035195fff62b4f47bd65462e3404da157197e8d3a7228de05ce5bd767882a96f5a5c1996691124411bfd939cda2b3fc56786057167edaee8152ee96e0b1a9bba" style="text-decoration:underline; color:#c1cbd3; display:block; margin:0 0 20px 0;">
+                <p style="margin:0; font-family:Arial,sans-serif; font-size:12px; line-height:18px; color:#c1cbd3;">UPDATE YOUR PREFERENCES</p>
+              </a>
 
-          <div style="border: 1px solid #fffdfd; width: 400px; margin: 30px 0 20px 0;"></div>
+              <!-- Unsubscribe Text (restricted to 420px max) -->
+              <p style="margin:0 0 25px 0; font-family:Arial,sans-serif; font-size:9px; line-height:18px; color:#cccccc;">
+                If you no longer want us to contact you <span><a href="https://click.e.ea.com/?qs=035195fff62b4f4756f0df413ea6329df32a8b98ae84b551c78ed6a0fda0f4f74ddcc094fee711d906339731dd88acb0b45c255e9b4ecec8de63056784625e37" style="text-decoration:underline; color:#c1cbd3;">click here</a></span> to be removed from our mailing list or change your preferences. You can also write to: Privacy Policy Administrator, Electronic Arts Inc., 209 Redwood Shores Parkway, Redwood City, CA 94065
+              </p>
 
-          <img src="img/game-rating.png" width="80" height="110" alt="Game Rating" style="display: inline-block;margin-bottom:10px;">
-
-          <p style="margin:0 0 10px 0;font-family:Arial,sans-serif;font-size:12px;line-height:18px;color:#cccccc; display:inline-block; vertical-align: top;">
-            Blood and Gore, Intense Violence, Strong Language <br> In-Game Purchase, Users Interact
-          </p>
-          <p style="margin:0;font-family:Arial,sans-serif;font-size:12px;line-height:18px; color:#cccccc;">
-            © 2025 Electronic Arts Inc. 
-          </p>
-          <a href="#" style="text-decoration: underline;color:#c1cbd3;">
-          <p style="margin-top: 30px;font-family:Arial,sans-serif;font-size:12px;line-height:18px; color:#cccccc;">UPDATE YOUR PREFERENCES</p>
-        </a>
-        <p style="margin:0; width: 400px; font-family:Arial,sans-serif;font-size:9px;line-height:18px; color:#cccccc;">If you no longer want us to contact you <span><a href="#" style="text-decoration: underline;color:#c1cbd3;">click here</a></span> to be removed from our mailing list or change your preferences. You can also wrote to: Privacy Policy Adminstrator, Electronic Arts Inc., 209 Redwood Shores Parkway, Redwood City, CA 94065</p>
-
-        <p style="margin-top: 25px;font-family:Arial,sans-serif;font-size:12px;line-height:18px;">
-          <a href="#" style="color:#cccccc;text-decoration:underline;">Unsubscribe</a> |
-          <a href="#" style="color:#cccccc;text-decoration:underline;">Privacy Policy</a> |
-          <a href="#" style="color:#cccccc;text-decoration:underline;">Contact Us</a>
-        </p>
-        </td>
-      </tr>
-    </table>
-
-    <!--[if mso]>
-        </td>
+              <!-- Footer Links -->
+              <p style="margin:0; font-family:Arial,sans-serif; font-size:12px; line-height:18px; text-align:left;">
+                <a href="https://click.e.ea.com/?qs=035195fff62b4f4756f0df413ea6329df32a8b98ae84b551c78ed6a0fda0f4f74ddcc094fee711d906339731dd88acb0b45c255e9b4ecec8de63056784625e37" style="color:#cccccc; text-decoration:underline; margin:0 8px 0 0;">Unsubscribe</a> |
+                <a href="https://click.e.ea.com/?qs=035195fff62b4f472bef3bb2e2e4cfa4f9d6176ebbaed936430c7ce6cb862f8c7c676e439a370b92609ae919fd48b7ce19e8a5ddcdd6844234ebedd6555d703c" style="color:#cccccc; text-decoration:underline; margin:0 8px;">Privacy Policy</a> |
+                <a href="#" style="color:#cccccc; text-decoration:underline; margin:0 0 0 8px;">Contact Us</a>
+              </p>
+            </div> <!-- END of text width wrapper -->
+          </td>
         </tr>
-        </table>
-    <![endif]-->
-
-    
-    </center>
-    
+      </table>
+      <!--[if mso]></td></tr></table><![endif]-->
+    </div>
+  </center>
 </body>
 </html>
